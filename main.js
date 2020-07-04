@@ -36,7 +36,7 @@ function renderArr(arr) {
     let col = document.createElement("div");
     col.setAttribute("style", `height:${arr[i]}px; postion:relative; `);
     // col.style.order = i;
-    col.style.width = `${(700 / arr.length) % 50}px`;
+    col.style.width = `${(700 / arr.length) % 80}px`;
     // col.style.border = "2px solid #fff";
     col.textContent = arr[i];
     col.style.fontSize = "10px";
@@ -60,7 +60,7 @@ const swapIndex = (arr, i, j) => {
   return arr;
 };
 
-async function bubbelSort(arr) {
+async function bubbleSort(arr) {
   for (let i = arr.length - 1; i >= 0; i--) {
     for (let j = 1; j <= i; j++) {
       if (arr[j - 1] > arr[j]) {
