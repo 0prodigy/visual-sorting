@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css?family=Luckiest+Guy");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  background-color: rgba(11, 11, 146, 0.925);
+}
+.row {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 700px;
+  overflow: scroll;
+  margin: 10px auto;
+  min-height: 70vh;
+  max-height: 70vh;
+  padding: 10px;
+  box-shadow: 0px 0px 10px rgb(43, 45, 54);
+  border: 10px solid #0e0e94c7;
+}
+.row div {
+  position: relative;
+}
+.row div > div {
+  border: 1px solid #fff;
+}
+.row div > div::before {
+  content: "";
+  position: absolute;
+  padding: 5px;
+  border-radius: 50%;
+  background-color: #dddddd;
+  margin: 0 2px;
+}
+button {
+  padding: 20px;
+  border: none;
+  font-weight: 800;
+}
+#btns,
+input {
+  display: block;
+  margin: 0 auto;
+  width: 600px;
+  padding: 10px;
+}
