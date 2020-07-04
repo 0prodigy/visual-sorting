@@ -33,6 +33,8 @@ body {
   border-radius: 50%;
   background-color: #dddddd;
   margin: 0 2px;
+  top: -20px;
+  left: 0px;
 }
 button {
   padding: 20px;
@@ -40,9 +42,13 @@ button {
   font-weight: 800;
 }
 #btns,
-input {
+.input-box {
   display: block;
   margin: 0 auto;
   width: 600px;
   padding: 10px;
+}
+input {
+  padding: 10px;
+  width: 80%;
 }

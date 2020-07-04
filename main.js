@@ -9,6 +9,13 @@ inputArr.addEventListener("keydown", () => {
     renderArr(arr);
   }
 });
+let sortBtn = document.getElementById("sort");
+sortBtn.addEventListener("click", () => {
+  let arr = inputArr.value;
+  arr = arr.trim().split(" ").map(Number);
+  Arr = arr;
+  renderArr(arr);
+});
 
 function renderArr(arr) {
   let row = document.querySelector(".row");
@@ -18,13 +25,13 @@ function renderArr(arr) {
   for (let i = 0; i < arr.length; i++) {
     let colParent = document.createElement("div");
     let col = document.createElement("div");
-    col.setAttribute(
-      "style",
-      `height:${arr[i]}px; postion:relative; padding: ${700 / arr.length / 2}px`
-    );
+    col.setAttribute("style", `height:${arr[i]}px; postion:relative; `);
     // col.style.order = i;
-    // col.style.padding = `0px  ${700 / arr.length / 2}px`;
-    // col.style.border = "2px solid #fff";
+    col.style.padding = `${(arr.length / 700) * 1000}px`;
+    col.textContent = arr[i];
+    col.style.fontSize = "10px";
+    col.style.color = "#fff";
+    // col.style.border = "6px solid #fff";
     colParent.append(col);
     row.append(colParent);
   }
