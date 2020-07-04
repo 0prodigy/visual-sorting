@@ -27,11 +27,15 @@ function renderArr(arr) {
     let col = document.createElement("div");
     col.setAttribute("style", `height:${arr[i]}px; postion:relative; `);
     // col.style.order = i;
-    col.style.padding = `${(arr.length / 700) * 1000}px`;
-    col.textContent = arr[i];
+    if (arr.length > 15) {
+      col.style.padding = `${(700 / arr.length) % 10}px`;
+      // col.style.border = "2px solid #fff";
+    } else {
+      col.style.padding = `${(700 / arr.length) % 20}px`;
+      col.textContent = arr[i];
+    }
     col.style.fontSize = "10px";
     col.style.color = "#fff";
-    // col.style.border = "6px solid #fff";
     colParent.append(col);
     row.append(colParent);
   }
