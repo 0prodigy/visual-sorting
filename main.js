@@ -55,3 +55,19 @@ async function bubbelSort(arr) {
     }
   }
 }
+
+async function selectionSort(arr) {
+  let minIdx;
+  for (let i = 0; i < arr.length; i++) {
+    minIdx = i;
+    for (let j = i + 1; j < arr.length; j++) {
+      if (arr[j] < arr[minIdx]) {
+        minIdx = j;
+      }
+    }
+    await swapIndex(arr, i, minIdx);
+    await renderArr(arr);
+    await sleep(time);
+  }
+  return arr;
+}
