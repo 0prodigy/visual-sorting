@@ -49,7 +49,7 @@ async function bubbelSort(arr) {
     for (let j = 1; j <= i; j++) {
       if (arr[j - 1] > arr[j]) {
         swapIndex(arr, j, j - 1);
-        await drawArr(arr);
+        await renderArr(arr);
         await sleep(time);
       }
     }
