@@ -1,5 +1,8 @@
-let time = 200;
+let time = 20;
 let Arr = [];
+let delay = document.getElementById("delay");
+let delayTime = document.getElementById("delayTime");
+
 let inputArr = document.getElementById("arr");
 inputArr.addEventListener("keydown", () => {
   if (event.keyCode == 13) {
@@ -9,6 +12,7 @@ inputArr.addEventListener("keydown", () => {
     renderArr(arr);
   }
 });
+
 let sortBtn = document.getElementById("sort");
 sortBtn.addEventListener("click", () => {
   let arr = inputArr.value;
@@ -16,6 +20,11 @@ sortBtn.addEventListener("click", () => {
   Arr = arr;
   renderArr(arr);
 });
+
+delay.oninput = function () {
+  time = delay.value;
+  delayTime.innerHTML = time;
+};
 
 function renderArr(arr) {
   let row = document.querySelector(".row");
@@ -29,7 +38,6 @@ function renderArr(arr) {
     // col.style.order = i;
     col.style.width = `${(700 / arr.length) % 50}px`;
     // col.style.border = "2px solid #fff";
-    col.style.width = `${(700 / arr.length) % 50}px`;
     col.textContent = arr[i];
     col.style.fontSize = "10px";
     col.style.color = "#fff";

@@ -4,6 +4,7 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: "Patrick Hand SC", cursive;
 }
 body {
   background-color: rgba(11, 11, 146, 0.925);
@@ -11,7 +12,7 @@ body {
 .row {
   display: flex;
   flex-wrap: nowrap;
-  width: 700px;
+  min-width: 700px;
   overflow: scroll;
   margin: 10px auto;
   min-height: 70vh;
@@ -25,6 +26,7 @@ body {
 }
 .row div > div {
   border: 1px solid #fff;
+  text-align: center;
 }
 .row div > div::before {
   content: "";
@@ -42,13 +44,34 @@ button {
   font-weight: 800;
 }
 #btns,
-.input-box {
+.input-box,
+input {
   display: block;
   margin: 0 auto;
-  width: 600px;
   padding: 10px;
 }
-input {
+
+#sort {
+  padding: 5px 10px;
+  margin: 10px 0px;
+}
+.container {
+  display: flex;
   padding: 10px;
-  width: 80%;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.input-box,
+#btns {
+  max-width: 25%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.delay-box {
+  color: #fff;
+}
+.delay-box input {
+  width: 100%;
 }
