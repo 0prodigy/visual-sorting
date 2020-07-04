@@ -71,3 +71,42 @@ async function selectionSort(arr) {
   }
   return arr;
 }
+
+async function quickSort(arr) {
+  await sort(arr, 0, arr.length - 1);
+
+  async function sort(arr, low, high) {
+    if (low < high) {
+      await renderArr(arr);
+      let index = await partition(arr, low, high);
+      await sort(arr, low, index - 1);
+      await sort(arr, index + 1, high);
+    }
+    await renderArr(arr);
+    return Promise.resolve();
+  }
+
+  async function partition(arr, low, high) {
+    let i = low;
+    let j = high;
+    let pivot = arr[high];
+    while (i < j) {
+      while (arr[j] >= pivot && j > 0) {
+        j--;
+      }
+      while (arr[i] < pivot && i < high) {
+        i++;
+      }
+      if (i < j) {
+        await swapIndex(arr, i, j);
+        await renderArr(arr);
+        await sleep(time);
+      }
+    }
+
+    await swapIndex(arr, i, high);
+    await renderArr(arr);
+    await sleep(time);
+    return Promise.resolve(i);
+  }
+}
