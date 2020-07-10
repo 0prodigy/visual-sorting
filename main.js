@@ -65,7 +65,7 @@ async function bubbleSort(arr) {
     for (let j = 1; j <= i; j++) {
       if (arr[j - 1] > arr[j]) {
         swapIndex(arr, j, j - 1);
-        await renderArr(arr);
+        renderArr(arr);
         await sleep(time);
       }
     }
@@ -82,7 +82,7 @@ async function selectionSort(arr) {
       }
     }
     await swapIndex(arr, i, minIdx);
-    await renderArr(arr);
+    renderArr(arr);
     await sleep(time);
   }
   return arr;
@@ -93,12 +93,12 @@ async function quickSort(arr) {
 
   async function sort(arr, low, high) {
     if (low < high) {
-      await renderArr(arr);
+      renderArr(arr);
       let index = await partition(arr, low, high);
       await sort(arr, low, index - 1);
       await sort(arr, index + 1, high);
     }
-    await renderArr(arr);
+    renderArr(arr);
     return Promise.resolve();
   }
 
@@ -115,14 +115,50 @@ async function quickSort(arr) {
       }
       if (i < j) {
         await swapIndex(arr, i, j);
-        await renderArr(arr);
+        renderArr(arr);
         await sleep(time);
       }
     }
 
     await swapIndex(arr, i, high);
-    await renderArr(arr);
+    renderArr(arr);
     await sleep(time);
     return Promise.resolve(i);
   }
 }
+
+async function mergeSort(arr) {
+  await sort(arr, 0, arr.length);
+  async function sort(arr, low, high) {
+    if (low < high) {
+      let mid = Math.floor((low + high) / 2);
+      await sort(arr, low, mid);
+      await sort(arr, mid + 1, high);
+      await merge(arr, low, mid, high);
+    } else {
+      return Promise.resolve();
+    }
+  }
+
+  async function merge(arr, low, mid, high) {
+    let left = arr.slice(low, mid + 1);
+    let right = arr.slice(mid + 1, high + 1);
+    let res = [];
+    while (left.length > 0 && right.length > 0) {
+      res.push(left[0] > right[0] ? right.shift() : left.shift());
+    }
+    if (left.length == 0) {
+      res.push(...right);
+    } else {
+      res.push(...left);
+    }
+    res.forEach(async (num) => {
+      await (arr[low++] = num);
+      renderArr(arr);
+      await sleep(time);
+    });
+  }
+  return Promise.resolve();
+}
+
+// console.log(mergeSort([9, 8, 7, 6, 5, 4, 3, 2, 1]));
