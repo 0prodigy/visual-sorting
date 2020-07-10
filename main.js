@@ -152,13 +152,15 @@ async function mergeSort(arr) {
     } else {
       res.push(...left);
     }
+    renderArr(arr);
+    await sleep(time);
     res.forEach(async (num) => {
       await (arr[low++] = num);
       renderArr(arr);
       await sleep(time);
     });
   }
-  return Promise.resolve();
+  return Promise.resolve(arr);
 }
 
 // console.log(mergeSort([9, 8, 7, 6, 5, 4, 3, 2, 1]));
