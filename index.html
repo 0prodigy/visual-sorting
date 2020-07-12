@@ -9,26 +9,36 @@
   <body>
     <div class="container">
       <div class="input-box">
-        <input
-          type="text"
-          id="arr"
-          placeholder="Space spareated array and hit enter or add"
-        />
-        <button id="sort">Add</button>
+        <div id="input-box">
+          <input
+            type="text"
+            id="arr"
+            placeholder="Space spareated array and hit enter or add"
+          />
+          <button id="sort">Add</button>
+        </div>
         <div class="delay-box">
-          Dealy Time &nbsp; &nbsp; &nbsp;<span id="delayTime"> 20</span>
-          <input type="range" id="delay" min="1" max="200" value="20" /><br />
+          <div>
+            Dealy Time &nbsp; &nbsp; &nbsp;<span id="delayTime"> 20</span>
+            <input type="range" id="delay" min="1" max="200" value="20" /><br />
+          </div>
+          <div>
+            Array Length &nbsp; &nbsp; &nbsp;<span id="delayTime"> 100</span>
+            <input type="range" id="len" min="10" max="200" value="100" /><br />
+          </div>
+        </div>
+        <div id="btns">
+          <button id="randomArr">Random Array</button>
+          <button id="input-btn">Custom Array</button>
+          <button id="selectionSort" onclick="selectionSort(Arr)">
+            Selection Sort
+          </button>
+          <button id="bubbleSort" onclick="bubbleSort(Arr)">Bubble Sort</button>
+          <button id="quickSort" onclick="quickSort(Arr)">Quick Sort</button>
+          <button id="mergeSort" onclick="mergeSort(Arr)">Merge Sort</button>
         </div>
       </div>
       <div class="row"></div>
-      <div id="btns">
-        <button id="selectionSort" onclick="selectionSort(Arr)">
-          Selection Sort
-        </button>
-        <button id="bubbleSort" onclick="bubbleSort(Arr)">Bubble Sort</button>
-        <button id="quickSort" onclick="quickSort(Arr)">Quick Sort</button>
-        <button id="mergeSort" onclick="mergeSort(Arr)">Merge Sort</button>
-      </div>
     </div>
 
     <script src="main.js"></script>
