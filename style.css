@@ -13,10 +13,10 @@ body {
   display: flex;
   flex-wrap: nowrap;
   min-width: 700px;
-  overflow: scroll;
+  /* overflow: scroll; */
   margin: 10px auto;
-  min-height: 70vh;
-  max-height: 70vh;
+  /* min-height: 70vh;
+  max-height: 70vh; */
   padding: 10px;
   box-shadow: 0px 0px 10px rgb(43, 45, 54);
   border: 10px solid #0e0e94c7;
@@ -56,22 +56,41 @@ input {
   margin: 10px 0px;
 }
 .container {
-  display: flex;
+  /* display: flex; */
   padding: 10px;
-  align-items: center;
-  min-height: 100vh;
 }
 
 .input-box,
 #btns {
-  max-width: 25%;
+  /* max-width: 25%; */
   padding: 10px;
   box-sizing: border-box;
 }
 
+#btns,
+.input-box {
+  display: flex;
+}
+
 .delay-box {
   color: #fff;
+  display: flex;
 }
-.delay-box input {
+.delay-box > div {
+  margin: 0 10px;
+}
+
+#input-box {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 100px);
   width: 100%;
+  text-align: center;
+  margin: 0 auto;
 }
+#input-box input {
+  width: 60%;
+}
+/* .delay-box input {
+  width: 100%;
+} */
