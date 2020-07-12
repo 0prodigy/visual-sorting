@@ -164,3 +164,14 @@ async function mergeSort(arr) {
 }
 
 // console.log(mergeSort([9, 8, 7, 6, 5, 4, 3, 2, 1]));
+let inputBtn = document.getElementById("input-btn");
+let inputBox = document.getElementById("input-box");
+let hide = document.getElementById("hide");
+
+inputBtn.addEventListener("click", () => {
+  inputBox.classList.add("search-box-show");
+});
+
+hide.addEventListener("click", () => {
+  inputBox.setAttribute("class", "");
+});

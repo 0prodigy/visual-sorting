@@ -83,11 +83,19 @@ input {
 #input-box {
   position: absolute;
   left: 50%;
-  transform: translate(-50%, 100px);
+  transform: translate(0, -100px);
+  display: none;
+  transition: 2s;
   width: 100%;
   text-align: center;
   margin: 0 auto;
 }
+#input-box.search-box-show {
+  display: block;
+  transform: translate(-50%, 100px);
+  transition: 2s;
+}
+
 #input-box input {
   width: 60%;
 }
