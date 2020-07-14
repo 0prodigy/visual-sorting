@@ -177,6 +177,7 @@ hide.addEventListener("click", () => {
 });
 
 function randomArr(input) {
+  Arr = [];
   for (let i = 0; i < input; i++) {
     Arr.push(Math.floor(Math.random() * 350));
   }
