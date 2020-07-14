@@ -7,28 +7,40 @@
   font-family: "Patrick Hand SC", cursive;
 }
 body {
-  background-color: rgba(11, 11, 146, 0.925);
+  background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
 }
 .row {
   display: flex;
   flex-wrap: nowrap;
-  min-width: 700px;
-  /* overflow: scroll; */
+  justify-content: center;
+  max-width: 1100px;
+  /* overflow-x: scroll; */
   margin: 10px auto;
   /* min-height: 70vh;
   max-height: 70vh; */
   padding: 10px;
-  box-shadow: 0px 0px 10px rgb(43, 45, 54);
-  border: 10px solid #0e0e94c7;
+  /* box-shadow: 0px 0px 10px rgb(43, 45, 54); */
 }
 .row div {
   position: relative;
 }
 .row div > div {
-  border: 1px solid #fff;
-  text-align: center;
+  background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.15) 0%,
+      rgba(0, 0, 0, 0.15) 100%
+    ),
+    radial-gradient(
+        at top center,
+        rgba(255, 255, 255, 0.4) 0%,
+        rgba(0, 0, 0, 0.4) 120%
+      )
+      #989898;
+  background-blend-mode: multiply, multiply;
+  border-right: 1px solid #fdfbfb;
+  /* text-align: center; */
 }
-.row div > div::before {
+/* .row div > div::before {
   content: "";
   position: absolute;
   padding: 5px;
@@ -37,12 +49,18 @@ body {
   margin: 0 2px;
   top: -20px;
   left: 0px;
-}
+} */
 button {
   padding: 20px;
   border: none;
   font-weight: 800;
 }
+
+.input-box {
+  background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+  color: #fff;
+}
+
 #btns,
 .input-box,
 input {
@@ -54,10 +72,6 @@ input {
 #sort {
   padding: 5px 10px;
   margin: 10px 0px;
-}
-.container {
-  /* display: flex; */
-  padding: 10px;
 }
 
 .input-box,
@@ -73,7 +87,7 @@ input {
 }
 
 .delay-box {
-  color: #fff;
+  color: rgb(15, 15, 15);
   display: flex;
 }
 .delay-box > div {
@@ -85,14 +99,16 @@ input {
   left: 50%;
   transform: translate(0, -100px);
   display: none;
-  transition: 2s;
+  transition: all 2s;
   width: 100%;
   text-align: center;
   margin: 0 auto;
+  background-image: linear-gradient(to right, #4facfe 0%, #00f2fe 100%);
+  z-index: 9;
 }
 #input-box.search-box-show {
   display: block;
-  transform: translate(-50%, 100px);
+  transform: translate(-50%, 90px);
   transition: 2s;
 }
 
