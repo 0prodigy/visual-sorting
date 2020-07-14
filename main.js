@@ -30,16 +30,16 @@ function renderArr(arr) {
   let row = document.querySelector(".row");
   row.innerHTML = "";
   //   row.style.display = "flex";
-  row.setAttribute("style", "display:flex; align-items:center;");
+  row.setAttribute("style", "display:flex;");
   for (let i = 0; i < arr.length; i++) {
     let colParent = document.createElement("div");
     let col = document.createElement("div");
-    col.setAttribute("style", `height:${arr[i]}px; postion:relative; `);
+    col.setAttribute("style", `height:${arr[i] + 10}px; postion:relative; `);
     // col.style.order = i;
-    col.style.width = `${(700 / arr.length) % 80}px`;
+    col.style.width = `${(1000 / arr.length) % 80}px`;
     // col.style.border = "2px solid #fff";
-    col.textContent = arr[i];
-    col.style.fontSize = "10px";
+    // col.textContent = arr[i];
+    // col.style.fontSize = "10px";
     col.style.color = "#fff";
     colParent.append(col);
     row.append(colParent);
@@ -175,3 +175,20 @@ inputBtn.addEventListener("click", () => {
 hide.addEventListener("click", () => {
   inputBox.setAttribute("class", "");
 });
+
+function randomArr(input) {
+  for (let i = 0; i < input; i++) {
+    Arr.push(Math.floor(Math.random() * 350));
+  }
+  renderArr(Arr);
+}
+
+window.onload = () => {
+  let randomArrBtn = document.getElementById("randomArr");
+  let size = document.getElementById("len");
+  randomArrBtn.addEventListener("click", () => {
+    // console.log(size.value);
+    randomArr(size.value);
+  });
+  randomArr(100);
+};
