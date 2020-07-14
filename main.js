@@ -192,4 +192,9 @@ window.onload = () => {
     randomArr(size.value);
   });
   randomArr(100);
+  let sizeDisplay = document.getElementById("size");
+  size.oninput = function () {
+    // time = delay.value;
+    sizeDisplay.innerHTML = size.value;
+  };
 };
