@@ -2,7 +2,7 @@
 
 > A simple visual sorting made by using HTML, CSS and Javascript async and promises. This will help you to understand how each sorting algorightm works behind the sence
 
-![before](./sorting.png) ![after](./sorting2.png)
+![Screenshot](./sorting.png)
 
 
 ## Built With
